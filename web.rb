@@ -22,7 +22,7 @@ get '/api/send-email' do
 						:to => 'tyler.e.stauss@gmail.com',
 						:from => 'noreply@example.com',
 						:subject => 'hello world',
-						:body => 'Hi Ian! Sending you an email via this API I just made.',
+						:body => 'Hi Ian! Sending you an email via this API I just made.'
 						}) 
 	puts 'email sent'
 end
