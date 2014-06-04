@@ -23,7 +23,6 @@ get '/api/send-email' do
 						:from => 'noreply@example.com',
 						:subject => 'hello world',
 						:body => 'Hi Ian! Sending you an email via this API I just made.',
-						:via => :sendmail
 						}) 
 	puts 'email sent'
 end
