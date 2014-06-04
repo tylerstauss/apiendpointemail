@@ -18,11 +18,11 @@ get '/api/send-email' do
 	# @response = JSON.parse(request.body.to_s)
 	# p @response
 	puts 'email not sent'
-	Pony.mail({
+	Pony.mail(
 						:to => 'tyler.e.stauss@gmail.com',
 						:from => 'noreply@example.com',
 						:subject => 'hello world',
 						:body => 'Hi Ian! Sending you an email via this API I just made.'
-						}) 
+						) 
 	puts 'email sent'
 end
