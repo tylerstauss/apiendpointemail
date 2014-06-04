@@ -3,6 +3,9 @@ require 'json'
 require 'uri'
 require 'httparty'
 require 'pony'
+require 'dotenv'
+
+Dotenv.load
 
 Pony.options = {
   :via => :smtp,
