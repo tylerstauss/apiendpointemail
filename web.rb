@@ -21,13 +21,16 @@ Pony.options = {
 }
 
 get '/' do
-	"Hello World"
-
+	"Hello Ian"
+	erb :index
 end
 
-get '/api/send-email' do
-	# @response = JSON.parse(request.body.to_s)
-	# p @response
+post '/api/send-email' do
+	@response = JSON.parse(response.to_s)
+	p '*' * 50
+	p params
+	p '*' * 50
+	p @response
 	'api send-email'
 	puts 'email not sent'
 	Pony.mail(
