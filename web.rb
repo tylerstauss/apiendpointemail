@@ -26,18 +26,16 @@ get '/' do
 end
 
 post '/api/send-email' do
-	@response = JSON.parse(response.to_s)
-	p '*' * 50
-	p params
-	p '*' * 50
-	p @response
-	'api send-email'
-	puts 'email not sent'
+	# @response = JSON.parse(request.body.to_s)
+	# p '*' * 50
+	# p params['to']
+	# p JSON.parse(params.to_s)
+	# p '*' * 50
+	# p @response
 	Pony.mail(
-						:to => 'tyler.e.stauss@gmail.com',
+						:to => params['to'],
 						:from => 'tyler.e.stauss@gmail.com',
-						:subject => 'hello world',
-						:body => 'Hi Ian! Sending you an email via this API I just made.'
+						:subject => params['subject'],
+						:body => params['body']
 						) 
-	puts 'email sent'
 end
