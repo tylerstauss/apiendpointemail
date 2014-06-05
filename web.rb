@@ -1,7 +1,4 @@
 require 'sinatra'
-require 'json'
-require 'uri'
-require 'httparty'
 require 'pony'
 require 'dotenv'
 
