@@ -26,12 +26,18 @@ get '/' do
 end
 
 post '/api/send-email' do
-	Pony.mail(
+
+	def send_mail
+			Pony.mail(
 						:to => params['to'],
-						:from => 'tyler.e.stauss@gmail.com',
+						:from => 'noreply@example.com',
 						:subject => params['subject'],
 						:body => params['body']
 						) 
+	end
+
+	send_mail if params['to'] && params['subject'] && params['body']
+
 end
 
 get '/api/send-email' do
