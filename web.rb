@@ -26,12 +26,6 @@ get '/' do
 end
 
 post '/api/send-email' do
-	# @response = JSON.parse(request.body.to_s)
-	# p '*' * 50
-	# p params['to']
-	# p JSON.parse(params.to_s)
-	# p '*' * 50
-	# p @response
 	Pony.mail(
 						:to => params['to'],
 						:from => 'tyler.e.stauss@gmail.com',
@@ -39,3 +33,7 @@ post '/api/send-email' do
 						:body => params['body']
 						) 
 end
+
+get '/api/send-email' do
+
+end		
